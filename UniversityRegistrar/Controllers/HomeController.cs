@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using FileName.Models;
+using UniversityRegistrar.Models;
 
-namespace FileName.Controllers
+namespace UniversityRegistrar.Controllers
 {
   public class HomeController : Controller
   {

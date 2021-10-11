@@ -28,15 +28,15 @@ Detailed description
 * Clone [this](github.com/yourName/repoName) repository, or download and open the Zip on your local machine
 * Open the FOLDER NAME folder in your preferred text editor
 * Restore and build the project:
-  - Navigate to the FileName.Solutions/FileName folder in the command line or terminal 
+  - Navigate to the UniversityRegistrar.Solutions/UniversityRegistrar folder in the command line or terminal 
     -- Run the command "$ dotnet restore" to restore the project dependencies
     -- Run the command "$ dotnet build" to build and compile the project
     -- Run the command "$ dotnet run" to build and compile the project
   * To run the tests:
- -Navigate to the FileName/FileName.tests folder in the command line or terminal 
+ -Navigate to the UniversityRegistrar/UniversityRegistrar.tests folder in the command line or terminal 
     -- Run the command "$ dotnet restore" to restore the test project dependencies
     -- Run the command "$ dotnet build" to build and compile the test project
-  - In the terminal (navigated to the FileName/FileName.tests folder) run the command "$ dotnet test"
+  - In the terminal (navigated to the UniversityRegistrar/UniversityRegistrar.tests folder) run the command "$ dotnet test"
 
 ## Known Bugs
 
