@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Student
+
+<h3>Enroll a Student</h3>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.LabelFor(model => model.EnrollmentDate)
+  @Html.TextBoxFor(model =? model.Enrollment Date, new{@type="date"})
+
+  @Html.Label("Enroll in Courses")
+  
+
+}
