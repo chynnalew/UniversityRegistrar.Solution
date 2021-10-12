@@ -94,8 +94,17 @@ namespace UniversityRegistrar.Controllers
       var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id );
       _db.Courses.Remove(thisCourse);
       _db.SaveChanges();
-      return RedirectToAction("Index");
-        
+      return RedirectToAction("Index");  
+    }
+
+    [HttpPost]
+    public ActionResult DeleteStudent(int joinId, int id) 
+    {
+      var joinEntry = _db.Enrollments.FirstOrDefault(entry => entry.EnrollmentsId == joinId);
+      _db.Enrollments.Remove(joinEntry);
+      _db.SaveChanges();
+      var thisCourse = _db.Courses.FirstOrDefault(course => course.CourseId == id);
+      return View("Details", thisCourse);
     }
   }
 }

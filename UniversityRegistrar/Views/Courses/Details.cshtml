@@ -20,6 +20,12 @@ else
     {
       <li>@join.Student.Name</li>
       <li>@join.Student.EnrollmentDate</li>
+      @using (Html.BeginForm("DeleteStudent", "Courses"))
+      {
+        @Html.Hidden("joinId", @join.EnrollmentsId)
+        @Html.Hidden("id", @Model.CourseId)
+        <input type="submit" value="Delete"/>
+      }
     }
   </ul>
 }

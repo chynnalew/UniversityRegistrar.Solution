@@ -12,8 +12,6 @@
   @Html.HiddenFor(model => model.StudentId)
     @Html.Label("Course")
     @Html.DropDownList("CourseId")
-    @Html.ListBoxFor(model => model.JoinEntities, new SelectList(Model.JoinEntities, "CourseName", "CourseNumber"))
-  
   <input type="submit" value="Add" />
 }
 

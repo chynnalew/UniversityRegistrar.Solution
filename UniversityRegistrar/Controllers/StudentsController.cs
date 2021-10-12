@@ -64,6 +64,16 @@ namespace UniversityRegistrar.Controllers
       return RedirectToAction("AddCourses");
     }
 
+   [HttpPost]
+    public ActionResult DeleteCourse(int joinId, int id)
+    {
+      var joinEntry = _db.Enrollments.FirstOrDefault(entry => entry.EnrollmentsId == joinId);
+      _db.Enrollments.Remove(joinEntry);
+      _db.SaveChanges();
+      var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
+      return View("Details", thisStudent);
+    } 
+
     public ActionResult Details(int id) {
       var thisStudent = _db.Students
         .Include(student => student.JoinEntities)
