@@ -18,8 +18,7 @@ else
   <ul>
     @foreach(var join in Model.JoinEntities)
     {
-      <li>@join.Student.Name</li>
-      <li>@join.Student.EnrollmentDate</li>
+      <li>@Html.ActionLink($"{join.Student.Name}", "Details", "Students", new{id = join.Student.StudentId}) | Enrolled: @join.Student.EnrollmentDate.Month/@join.Student.EnrollmentDate.Day/@join.Student.EnrollmentDate.Year</li>
       @using (Html.BeginForm("DeleteStudent", "Courses"))
       {
         @Html.Hidden("joinId", @join.EnrollmentsId)

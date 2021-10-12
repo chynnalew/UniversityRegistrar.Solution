@@ -1,4 +1,18 @@
+
 body {
   background-color: black;
   color: greenyellow;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: uppercase;
+  padding: 2% 0;
+}
+
+a {
+  color:#fff;
+}
+
+a:hover {
+  color:magenta;
+  font-weight:bold;
+  text-decoration: none;
 }

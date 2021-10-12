@@ -18,7 +18,7 @@ else
   <ul>
     @foreach (var join in Model.JoinEntities)
     {
-      <li>@join.Course.CourseName</li>
+      <li>@Html.ActionLink($"{join.Course.CourseName}", "Details", "Courses", new{id = join.Course.CourseId})</li>
       @using (Html.BeginForm("DeleteCourse", "Students"))
       {
         @Html.Hidden("joinId", @join.EnrollmentsId)
