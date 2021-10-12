@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Student
+
+<h2>Would you like to destroy this student?</h2>
+
+<p>Student Name: @Model.Name</p>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Confirm Destroy"/>
+}
+
+@Html.ActionLink("Back to Student List", "Index")

@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Course
+
+<h1>Add a Student to @Model.CourseName</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.CourseId)
+  @Html.Label("Select a Student")
+  @Html.DropDownList("StudentId")
+
+  <input type="submit" value="Add Student"/>
+}
+
+<p>Currently Enrolled:</p>
+<ul>
+  @foreach (var join in Model.JoinEntities)
+  {
+    <li>@join.Student.Name</li>
+  }
+</ul>
+
+<p>@Html.ActionLink("Back to Course List", "Index")</p>

@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Course
+
+<h1>Course Details</h1>
+<h3>@Html.DisplayNameFor(model => model.CourseName): @Html.DisplayFor(model => model.CourseName)</h3>
+<p>@Html.DisplayNameFor(model => model.CourseNumber): @Html.DisplayFor(model => model.CourseNumber)</p>
+
+<h3>Students Enrolled in @Model.CourseName</h3>
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>No Students Enrolled in this Course</p>
+}
+else 
+{
+  <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Student.Name</li>
+      <li>@join.Student.EnrollmentDate</li>
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Edit Course", "Edit", new{id = Model.CourseId})</p>
+<p>@Html.ActionLink("Add a Student", "AddStudent", new{id = Model.CourseId})</p>
+<p>@Html.ActionLink("View Course List", "Index")</p>
+<br>
+<p>WARNING: THE BELOW ACTION CAN NOT BE UNDONE</p>
+<p>@Html.ActionLink("Delete this Course", "Delete", new{id = Model.CourseId})</p>

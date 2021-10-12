@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Course
+
+<h1>Are you sure you want to delete @Model.CourseName?</h1>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete"/>
+}
+@Html.ActionLink("Return to Course List", "Index")
